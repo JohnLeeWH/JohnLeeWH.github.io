@@ -17,6 +17,14 @@
 </ol>
 <h4 id="传输通过随机值加密的信息"><a href="#传输通过随机值加密的信息" class="headerlink" title="传输通过随机值加密的信息"></a>传输通过随机值加密的信息</h4><p>服务端和客户端通信都通过之前的那条随机值进行加解密<em><code>对称加密</code></em><br>只要不知道该随机值就无法对通信中的内容进行解密查看</p>
 ]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+        <tag>ssl</tag>
+        <tag>web security</tag>
+      </tags>
   </entry>
   <entry>
     <title>本站正式使用</title>
