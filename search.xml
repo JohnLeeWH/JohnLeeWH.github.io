@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HTTPS的安全性学习</title>
+    <title>HTTPS的学习</title>
     <url>/2020/03/28/HTTPS%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h3 id="HTTP的安全风险"><a href="#HTTP的安全风险" class="headerlink" title="HTTP的安全风险"></a>HTTP的安全风险</h3><p>HTTP（超文本传输协议）是目前互联网最常用的应用层协议，在客户端浏览器与www服务器之间传递信息。<br>传递信息的过程中，由于HTTP无连接无状态的特点，容易被链路上的其它人截获数据包，并导致数据泄露和恶意人员伪装利用。</p>
 <h3 id="HTTPS的意义"><a href="#HTTPS的意义" class="headerlink" title="HTTPS的意义"></a>HTTPS的意义</h3><p>根据上面提到的HTTP的风险，HTTPS就是为了解决这种问题而诞生的。<br>HTTPS是HTTP协议的一种扩展，在HTTP基础上加上SSL（TLS）来保证安全性。SSL对原来的HTTP数据提供了加密性、数据一致性、身份认证的安全功能。</p>
