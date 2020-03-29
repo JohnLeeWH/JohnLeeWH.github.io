@@ -22,33 +22,34 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Record my life and thoughts.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sinnoh">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="HTTP的安全风险HTTP（超文本传输协议）是目前互联网最常用的应用层协议，在客户端浏览器与www服务器之间传递信息。传递信息的过程中，由于HTTP无连接无状态的特点，容易被链路上的其它人截获数据包，并导致数据泄露和恶意人员伪装利用。 HTTPS的意义根据上面提到的HTTP的风险，HTTPS就是为了解决这种问题而诞生的。HTTPS是HTTP协议的一种扩展，在HTTP基础上加上SSL（TLS）来保证">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTPS的安全性学习">
+<meta property="og:url" content="http://yoursite.com/2020/03/28/HTTPS%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Sinnoh">
-<meta property="og:description" content="Record my life and thoughts.">
+<meta property="og:description" content="HTTP的安全风险HTTP（超文本传输协议）是目前互联网最常用的应用层协议，在客户端浏览器与www服务器之间传递信息。传递信息的过程中，由于HTTP无连接无状态的特点，容易被链路上的其它人截获数据包，并导致数据泄露和恶意人员伪装利用。 HTTPS的意义根据上面提到的HTTP的风险，HTTPS就是为了解决这种问题而诞生的。HTTPS是HTTP协议的一种扩展，在HTTP基础上加上SSL（TLS）来保证">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-28T05:09:22.000Z">
+<meta property="article:modified_time" content="2020-03-29T14:06:27.686Z">
 <meta property="article:author" content="JohnLeeWH">
-<meta property="article:tag" content="IT">
-<meta property="article:tag" content=" Travel">
-<meta property="article:tag" content=" Photo">
-<meta property="article:tag" content=" Politics">
+<meta property="article:tag" content="http">
+<meta property="article:tag" content="ssl">
+<meta property="article:tag" content="web security">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/03/28/HTTPS%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E5%AD%A6%E4%B9%A0/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false
+    isHome : false,
+    isPost : true
   };
 </script>
 
-  <title>Sinnoh</title>
+  <title>HTTPS的安全性学习 | Sinnoh</title>
   
 
 
@@ -195,10 +196,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/28/HTTPS%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -212,8 +213,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/28/HTTPS%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">HTTPS的安全性学习</a>
+          HTTPS的安全性学习
         </h1>
 
         <div class="post-meta">
@@ -243,6 +243,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -253,7 +260,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="HTTP的安全风险"><a href="#HTTP的安全风险" class="headerlink" title="HTTP的安全风险"></a>HTTP的安全风险</h3><p>HTTP（超文本传输协议）是目前互联网最常用的应用层协议，在客户端浏览器与www服务器之间传递信息。<br>传递信息的过程中，由于HTTP无连接无状态的特点，容易被链路上的其它人截获数据包，并导致数据泄露和恶意人员伪装利用。</p>
+        <h3 id="HTTP的安全风险"><a href="#HTTP的安全风险" class="headerlink" title="HTTP的安全风险"></a>HTTP的安全风险</h3><p>HTTP（超文本传输协议）是目前互联网最常用的应用层协议，在客户端浏览器与www服务器之间传递信息。<br>传递信息的过程中，由于HTTP无连接无状态的特点，容易被链路上的其它人截获数据包，并导致数据泄露和恶意人员伪装利用。</p>
 <h3 id="HTTPS的意义"><a href="#HTTPS的意义" class="headerlink" title="HTTPS的意义"></a>HTTPS的意义</h3><p>根据上面提到的HTTP的风险，HTTPS就是为了解决这种问题而诞生的。<br>HTTPS是HTTP协议的一种扩展，在HTTP基础上加上SSL（TLS）来保证安全性。SSL对原来的HTTP数据提供了加密性、数据一致性、身份认证的安全功能。</p>
 <h3 id="SSL与TLS"><a href="#SSL与TLS" class="headerlink" title="SSL与TLS"></a>SSL与TLS</h3><p>TLS <em>（传输层安全Transport Layer Security）</em>是SSL <em>（安全套接层Secure Sockets Layer）</em>的后续版本，TLS与SSL在传输层与应用层之间对网络连接进行加密。<br>作用有：</p>
 <ol>
@@ -309,173 +316,32 @@
 <h5 id="X-509证书"><a href="#X-509证书" class="headerlink" title="X.509证书"></a>X.509证书</h5><p>X.509是公开密钥证书的标准格式，这个文档将加密密钥与（个人或组织）进行安全的关联。</p>
 <p>参考自：<a href="https://segmentfault.com/a/1190000022012971" target="_blank" rel="noopener">https://segmentfault.com/a/1190000022012971</a></p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/http/" rel="tag"># http</a>
+              <a href="/tags/ssl/" rel="tag"># ssl</a>
+              <a href="/tags/web-security/" rel="tag"># web security</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/17/%E6%88%91%E5%AF%B9HTTPS%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JohnLeeWH">
-      <meta itemprop="description" content="Record my life and thoughts.">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sinnoh">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/17/%E6%88%91%E5%AF%B9HTTPS%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/" class="post-title-link" itemprop="url">我对HTTPS握手过程的简单理解</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-17 21:24:21" itemprop="dateCreated datePublished" datetime="2020-03-17T21:24:21+08:00">2020-03-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-29 21:48:18" itemprop="dateModified" datetime="2020-03-29T21:48:18+08:00">2020-03-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="服务端的数字证书"><a href="#服务端的数字证书" class="headerlink" title="服务端的数字证书"></a>服务端的数字证书</h4><p>web服务端在提供HTTPS服务的时候，需要配置一对公私钥，就是一套数字证书</p>
-<h4 id="客户端发起请求"><a href="#客户端发起请求" class="headerlink" title="客户端发起请求"></a>客户端发起请求</h4><p>web客户端（浏览器）发起了HTTPS请求，服务端接收到请求，便把证书（公钥）发送给客户端<br>证书中包含了颁发机构、过期时间等内容</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/17/%E6%88%91%E5%AF%B9HTTPS%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/17/%E6%88%91%E5%AF%B9HTTPS%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/" rel="prev" title="我对HTTPS握手过程的简单理解">
+      <i class="fa fa-chevron-left"></i> 我对HTTPS握手过程的简单理解
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/15/This-site-is-building/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JohnLeeWH">
-      <meta itemprop="description" content="Record my life and thoughts.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sinnoh">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/15/This-site-is-building/" class="post-title-link" itemprop="url">本站正式使用</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-15 22:22:56" itemprop="dateCreated datePublished" datetime="2020-03-15T22:22:56+08:00">2020-03-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-22 19:45:45" itemprop="dateModified" datetime="2020-03-22T19:45:45+08:00">2020-03-22</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>更新时间：2020-3-17<br><strong>本博客开始使用</strong></p>
-<blockquote>
-<p>这站点有什么用？</p>
-</blockquote>
-<p>本来我是没有什么写记录的习惯的┑(￣Д ￣)┍<br>但是自从工作以来，每天获得的信息太多，许多有用有趣的知识、想法不记录下来隔几天就忘了<br>开通这个博客，可以作为一个内容输出口，协助记录自己生活的同时，迫使自己不要把燃起的动力给鸽了😂</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/15/This-site-is-building/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
@@ -483,12 +349,10 @@
 
   </div>
 
-  
-
-
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -535,6 +399,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP的安全风险"><span class="nav-number">1.</span> <span class="nav-text">HTTP的安全风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS的意义"><span class="nav-number">2.</span> <span class="nav-text">HTTPS的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSL与TLS"><span class="nav-number">3.</span> <span class="nav-text">SSL与TLS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性的实现"><span class="nav-number">4.</span> <span class="nav-text">安全性的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#密码学概念"><span class="nav-number">4.1.</span> <span class="nav-text">密码学概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对称加密"><span class="nav-number">4.2.</span> <span class="nav-text">对称加密</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常见的对称加密算法"><span class="nav-number">4.2.1.</span> <span class="nav-text">常见的对称加密算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对称加密的问题"><span class="nav-number">4.2.2.</span> <span class="nav-text">对称加密的问题</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非对称加密"><span class="nav-number">4.3.</span> <span class="nav-text">非对称加密</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常用非对称加密算法"><span class="nav-number">4.3.1.</span> <span class="nav-text">常用非对称加密算法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混合加密"><span class="nav-number">4.4.</span> <span class="nav-text">混合加密</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整性的实现"><span class="nav-number">5.</span> <span class="nav-text">完整性的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加盐"><span class="nav-number">5.1.</span> <span class="nav-text">加盐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#摘要算法"><span class="nav-number">5.2.</span> <span class="nav-text">摘要算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常用的摘要算法"><span class="nav-number">5.2.1.</span> <span class="nav-text">常用的摘要算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#身份验证的实现"><span class="nav-number">6.</span> <span class="nav-text">身份验证的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数字签名"><span class="nav-number">6.1.</span> <span class="nav-text">数字签名</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数字签名的认证问题"><span class="nav-number">6.1.1.</span> <span class="nav-text">数字签名的认证问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#X-509证书"><span class="nav-number">6.1.2.</span> <span class="nav-text">X.509证书</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -733,6 +598,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'eaae1e4d10fba80e8967',
+      clientSecret: '31fb10a509696c28d1cd641b80738d465b816aa7',
+      repo        : 'GitalkOfSinnoh',
+      owner       : 'JohnLeeWH',
+      admin       : ['JohnLeeWH'],
+      id          : '5f3a27036160a9d5e49326d20e528f14',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>
