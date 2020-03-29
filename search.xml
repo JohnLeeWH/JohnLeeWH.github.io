@@ -9,9 +9,10 @@
 <ol>
 <li>认证用户和服务器，确保数据发送到正确的客户机和服务器；</li>
 <li>加密数据以防止数据中途被窃取；</li>
-<li>维护数据的完整性，确保数据在传输过程中不被改变。</li>
+<li>维护数据的完整性，确保数据在传输过程中不被改变。<a id="more"></a>
+<h3 id="安全性的实现"><a href="#安全性的实现" class="headerlink" title="安全性的实现"></a>安全性的实现</h3><h4 id="密码学概念"><a href="#密码学概念" class="headerlink" title="密码学概念"></a>密码学概念</h4></li>
 </ol>
-<h3 id="安全性的实现"><a href="#安全性的实现" class="headerlink" title="安全性的实现"></a>安全性的实现</h3><h4 id="密码学概念"><a href="#密码学概念" class="headerlink" title="密码学概念"></a>密码学概念</h4><ul>
+<ul>
 <li>明文：有意义的字符或比特集，通过某种公开编码就能获得的消息。类似于人人都能够读懂的信息。</li>
 <li>密文：明文进行某种算法转换后变成密文，不能直接获得包含信息。类似于被处理过的无法直接读懂的信息。</li>
 <li>加密：把原始的信息（明文）转换为密文的信息变换过程。</li>
@@ -72,7 +73,7 @@
     <title>我对HTTPS握手过程的简单理解</title>
     <url>/2020/03/17/%E6%88%91%E5%AF%B9HTTPS%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/</url>
     <content><![CDATA[<h4 id="服务端的数字证书"><a href="#服务端的数字证书" class="headerlink" title="服务端的数字证书"></a>服务端的数字证书</h4><p>web服务端在提供HTTPS服务的时候，需要配置一对公私钥，就是一套数字证书</p>
-<h4 id="客户端发起请求"><a href="#客户端发起请求" class="headerlink" title="客户端发起请求"></a>客户端发起请求</h4><p>web客户端（浏览器）发起了HTTPS请求，服务端接收到请求，便把证书（公钥）发送给客户端<br>证书中包含了颁发机构、过期时间等内容</p>
+<h4 id="客户端发起请求"><a href="#客户端发起请求" class="headerlink" title="客户端发起请求"></a>客户端发起请求</h4><p>web客户端（浏览器）发起了HTTPS请求，服务端接收到请求，便把证书公钥发送给客户端<br>证书其实就是公钥，其中包含了颁发机构、过期时间等内容</p>
 <a id="more"></a>
 <h4 id="客户端解析证书"><a href="#客户端解析证书" class="headerlink" title="客户端解析证书"></a>客户端解析证书</h4><p>客户端由TLS完成解析证书</p>
 <ol>
@@ -85,6 +86,7 @@
 <li>服务端收到这条使用公钥加密的信息，使用私钥对其解密<em><code>非对称加密</code></em>，获取随机值</li>
 </ol>
 <h4 id="传输通过随机值加密的信息"><a href="#传输通过随机值加密的信息" class="headerlink" title="传输通过随机值加密的信息"></a>传输通过随机值加密的信息</h4><p>服务端和客户端通信都通过之前的那条随机值进行加解密<em><code>对称加密</code></em><br>只要不知道该随机值就无法对通信中的内容进行解密查看</p>
+<p>参考自：<a href="https://blog.csdn.net/cout__waht/article/details/80859369" target="_blank" rel="noopener">https://blog.csdn.net/cout__waht/article/details/80859369</a></p>
 ]]></content>
       <categories>
         <category>web</category>
