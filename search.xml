@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>再见，2020年的3个月</title>
+    <url>/2020/03/31/%E5%86%8D%E8%A7%81%EF%BC%8C2020%E5%B9%B4%E7%9A%843%E4%B8%AA%E6%9C%88/</url>
+    <content><![CDATA[<p>前几天，刷微博中看见一个视频<br>在这个春天里，武汉的樱花还未被人观赏，便让一场大雨打落飘去<br>不由想到，这三个月以来，武汉乃至全国各地躺在病床上的几千人，也来不及与亲友道个别，便消逝了</p>
+<p>樱花的开花时间很短，只有一周的时间，而开花与落花时间都是随天而定。<br>樱花开谢虽无常，但绚烂；<br>铭记因这场灾难离去的人，就如同记住樱花盛开的样子。</p>
+<video controls="" src="https://f.video.weibocdn.com/001qCf4Hgx07C35d7Oof01041202BFHb0E010.mp4?label=mp4_720p&template=1280x720.25.0&trans_finger=1f0da16358befad33323e3a1b7f95fc9&Expires=1585665943&ssig=dP0TvK5t0U&KID=unistore,video">
+</video>]]></content>
+  </entry>
+  <entry>
     <title>HTTPS的学习</title>
     <url>/2020/03/28/HTTPS%E7%9A%84%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h3 id="HTTP的安全风险"><a href="#HTTP的安全风险" class="headerlink" title="HTTP的安全风险"></a>HTTP的安全风险</h3><p>HTTP（超文本传输协议）是目前互联网最常用的应用层协议，在客户端浏览器与www服务器之间传递信息。<br>传递信息的过程中，由于HTTP无连接无状态的特点，容易被链路上的其它人截获数据包，并导致数据泄露和恶意人员伪装利用。</p>
